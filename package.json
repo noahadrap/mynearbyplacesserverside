@@ -1,0 +1,30 @@
+{
+  "name": "mynearbyplacesserverside",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodejs": "^0.0.0",
+    "pg": "^8.6.0",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noahadrap/mynearbyplacesserverside.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noahadrap/mynearbyplacesserverside/issues"
+  },
+  "homepage": "https://github.com/noahadrap/mynearbyplacesserverside#readme"
+}
