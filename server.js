@@ -33,7 +33,7 @@ app.get('/places', (request, response) => {
 
 app.post('/addReview', (request, response) => {
    db.saveReview(request.body.name, request.body.business, request.body.review, request.body.rating)
-   .then(places => response.json(places))
+   .then(reviews => response.json(reviews))
    .catch(e => {console.log(e); response.status(500).send('there was an error in saving the review')})
     
 
