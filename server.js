@@ -22,6 +22,15 @@ app.get('/places', (request, response) => {
 
  });
 
+ app.post('/addPlace', (request, response) => {
+   db.savePlace()
+   .then(places => response.json(places))
+   .catch(e => {console.log(e); response.status(500).send('there was an error in saving the place')})
+    
+
+
+});
+
  app.get('/', (request, response) => {
     response.send("Welcome to mynearbyplaces server side");
  });
