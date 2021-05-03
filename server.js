@@ -31,6 +31,15 @@ app.get('/places', (request, response) => {
 
 });
 
+app.post('/addReview', (request, response) => {
+   db.savePlace(request.body.name, request.body.business, request.body.review, request.body.rating)
+   .then(places => response.json(places))
+   .catch(e => {console.log(e); response.status(500).send('there was an error in saving the review')})
+    
+
+
+});
+
 app.post('/deletePlace', (request, response) => {
    db.deletePlace(request.body.id)
    .then(places => response.json(places))
@@ -43,7 +52,7 @@ app.post('/deletePlace', (request, response) => {
 app.post('/editPlace', (request, response) => {
    db.editPlace(request.body.name, request.body.address, request.body.image, request.body.id)
    .then(places => response.json(places))
-   .catch(e => {console.log(e); response.status(500).send('there was an error in delete the place')})
+   .catch(e => {console.log(e); response.status(500).send('there was an error in editing the place')})
     
 
 

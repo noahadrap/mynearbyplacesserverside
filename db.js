@@ -41,6 +41,15 @@ let savePlace = (name, address, image) => {
     
 }
 
+let saveReview = (name, business, review, rating) => {
+    console.log(connectionString)
+    let sql = `insert into mynearbyplaces.reviews(name, business, review, rating) values ($1, $2, $3. $4)`;
+    console.log(sql);
+    return pool.query(sql, [name, business, review, rating])
+    .then(() => console.log('the review was saved'));
+    
+}
+
 let deletePlace = (id) => {
     console.log(connectionString)
     let sql = `DELETE FROM mynearbyplaces.businesses WHERE id=$1`;
