@@ -41,6 +41,13 @@ let savePlace = (name, address, image) => {
     
 }
 
+let deletePlace = (id) => {
+    console.log(connectionString)
+    let sql = `DELETE FROM mynearbyplaces.businesses WHERE id=$1`;
+    return pool.query(sql, [id])
+    .then(() => console.log('the place was deleted'));
+}
+
 let saveReview = (place, name, review, rating) => {
     console.log(connectionString)
     let sql = `insert into mynearbyplaces.reviews(place, name, review, rating) values ($1, $2, $3, $4)`;
@@ -49,4 +56,4 @@ let saveReview = (place, name, review, rating) => {
     .catch(e => console.log(e));
 }
 
-module.exports = {getPlaces, getReviews, savePlace, saveReview}
+module.exports = {getPlaces, getReviews, savePlace, saveReview, deletePlace}
