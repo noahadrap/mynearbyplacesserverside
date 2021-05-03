@@ -66,12 +66,4 @@ let editPlace = (name, address, image, id) => {
     .then(() => console.log('the place was edited'));
 }
 
-let saveReview = (place, name, review, rating) => {
-    console.log(connectionString)
-    let sql = `insert into mynearbyplaces.reviews(place, name, review, rating) values ($1, $2, $3, $4)`;
-    return pool.query(sql, [place, name, review, rating])
-    .then(() => console.log('the review was saved'))
-    .catch(e => console.log(e));
-}
-
 module.exports = {getPlaces, getReviews, savePlace, saveReview, deletePlace, editPlace}
