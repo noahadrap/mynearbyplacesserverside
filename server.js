@@ -40,6 +40,15 @@ app.post('/deletePlace', (request, response) => {
 
 });
 
+app.post('/editPlace', (request, response) => {
+   db.editPlace(request.body.name, request.body.address, request.body.image, request.body.id)
+   .then(places => response.json(places))
+   .catch(e => {console.log(e); response.status(500).send('there was an error in delete the place')})
+    
+
+
+});
+
  app.get('/', (request, response) => {
     response.send("Welcome to mynearbyplaces server side");
  });
