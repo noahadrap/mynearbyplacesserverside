@@ -23,7 +23,7 @@ app.get('/places', (request, response) => {
  });
 
  app.post('/addPlace', (request, response) => {
-   db.savePlace()
+   db.savePlace(request.body.name, request.body.address, request.body.image)
    .then(places => response.json(places))
    .catch(e => {console.log(e); response.status(500).send('there was an error in saving the place')})
     

@@ -35,9 +35,10 @@ let getReviews = () => {
 let savePlace = (name, address, image) => {
     console.log(connectionString)
     let sql = `insert into mynearbyplaces.businesses(name, image, address) values ($1, $2, $3)`;
+    console.log(sql);
     return pool.query(sql, [name, image, address])
-    .then(() => console.log('the place was saved'))
-    .catch(e => console.log(e));
+    .then(() => console.log('the place was saved'));
+    
 }
 
 let saveReview = (place, name, review, rating) => {
